@@ -3,6 +3,11 @@
 #include <iostream>
 #include "Student.h"
 
+/* Finn McKinley
+ * 12/19/19
+ * Linked Lists Part 1
+*/
+
 using namespace std;
 
 class Node

@@ -17,21 +17,21 @@ Student::Student(char* newFirstName, char* newLastName, int newID, float newGPA)
 }
 
 char* Student::getFirstName()
-{
+{//Get the student's first name
   return firstName;
 }
 
 char* Student::getLastName()
-{
+{//Get the student's last name
   return lastName;
 }
 
 int Student::getID()
-{
+{//Get the student's ID
   return ID;
 }
 
 float Student::getGPA()
-{
+{//Get the student's GPA
   return GPA;
 }

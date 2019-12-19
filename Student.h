@@ -2,6 +2,11 @@
 #define STUDENT_H
 #include <iostream>
 
+/* Finn McKinley
+ * 12/19/19
+ * Linked Lists Part 1
+ */
+
 using namespace std;
 
 class Student

@@ -2,6 +2,11 @@
 #include <cstring>
 #include "Student.h"
 
+/* Finn McKinley
+ * 12/19/19
+ * Linked Lists Part 1
+ */
+
 Student::Student(char* newFirstName, char* newLastName, int newID, float newGPA)
 {
   firstName = new char[strlen(newFirstName)+1];

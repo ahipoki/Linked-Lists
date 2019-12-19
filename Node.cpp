@@ -3,6 +3,8 @@
 #include "Node.h"
 #include "Student.h"
 
+using namespace std;
+
 Node::Node(Student* s)
 {
   student = s;
@@ -20,7 +22,7 @@ void Node::setStudent(Student* newStudent)
   student = newStudent;
 }
 
-int Node::getStudent()
+Student* Node::getStudent()
 {
   return student;
 }

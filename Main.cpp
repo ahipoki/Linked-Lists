@@ -5,49 +5,51 @@
 
 using namespace std;
 
-void add(int newStudent);
-void print(Node* next);
-
-Node* head = NULL;
+void add(Student*, Node**);
+void print(Node*, Node*);
 
 int main()
 {
-  add(5);
-  print(head);
-  add(7);
-  print(head);
-  add(2);
-  print(head);
+  Node* head;
+  add(new Student("Gregory", "Feng", 1, 1.0), &head);
+  add(new Student("Jason", "Zheng", 345, 4.0), &head);
+  print(head, head);
+  add(new Student("Finn", "McKinley", 456, 4.0), &head);
+  add(new Student("Joe", "Mama", 69, 4.20), &head);
+  print(head, head);
+  //cout << "Test" << endl;
 }
 
-void add(int newStudent)
+void add(Student* newStudent, Node** head)
 {
-  Node* current = head;
-  if (current == NULL)
+  Node** current = head;
+  if (*current == NULL)
   {
-    head = new Node();
-    head->setStudent(newStudent);
+    *head = new Node(newStudent);
+    //head->setStudent(newStudent);
   }
   else
   {
-    while (current->getNext() != NULL)
+    while ((*current)->getNext() != NULL)
     {
-      current = current->getNext();
+      Node* temp = (*current)->getNext();
+      current = &temp;
     }
-    current->setNext(new Node());
-    current->getNext()->setStudent(newStudent);
+    (*current)->setNext(new Node(newStudent));
+    //current->getNext()->setStudent(newStudent);
   }
 }
 
-void print(Node* next)
+void print(Node* next, Node* head)
 {
+  //Node* head;
   if (next == head)
   {
-    cout << "list:";
+    cout << "List:" << endl;
   }
   if (next != NULL)
   {
-    cout << next->getStudent() << " ";
-    print(next->getNext());
+    cout << "Student: " << next->getStudent()->getFirstName() << " " << next->getStudent()->getLastName() << " ID: " << next->getStudent()->getID() << " GPA: " << next->getStudent()->getGPA() << endl;
+    print(next->getNext(), head);
   }
 }
